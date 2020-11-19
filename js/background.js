@@ -16,7 +16,7 @@ chrome.browserAction.onClicked.addListener(function() {
         throw currentTab.url;
       }
       // send to local MiniYoutube App
-      youtube_id = currentTab.url.split('?')[1].split('v=')[1]
+      youtube_id = currentTab.url.split('?')[1].split('v=')[1].split('&')[0];
       chrome.tabs.update(currentTabId, {url:`youtube://${width}/${height}/${youtube_id}`})
     }
     catch(e){

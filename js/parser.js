@@ -13,29 +13,7 @@ class BaseParser{
     }
 }
 
-// class QueryParser extends BaseParser {
 
-
-
-//     get key(){
-//         return 'Query';
-//     }
-
-//     parse(url, ...keyWord){
-//         let urlsSplitted = url.split(queryToken);
-//         let queries = urlsSplitted[1].split(splitToken);
-//         let fixedQueries = [queryToken];
-//         for (let query of queries){
-//             let params = query.split(valueToken);
-//             if (params[0].toUpperCase() == ...keyWord.toUpperCase()) {
-//             let nextPage = parseInt(params[1]);
-//             query = ...keyWord + valueToken + String(++nextPage);
-//             }
-//             fixedQueries.push(query)
-//         }
-//         return urlsSplitted[0] + fixedQueries.toString().replace(/,/g, '&');
-//     }
-// }
 
 class RegexpParser extends BaseParser {
 
