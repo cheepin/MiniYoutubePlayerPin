@@ -1,7 +1,7 @@
 const youtube_url = 'https://www.youtube.com/watch?'
 const search = 'page';
-const width = 960;
-const height = 540;
+const width = 1920;
+const height = 1080;
 var counter = 1;
 var lastTabId = -1;
 
@@ -17,7 +17,7 @@ chrome.browserAction.onClicked.addListener(function() {
       }
       // send to local MiniYoutube App
       youtube_id = currentTab.url.split('?')[1].split('v=')[1].split('&')[0];
-      chrome.tabs.update(currentTabId, {url:`youtube://${width}/${height}/${youtube_id}`})
+      chrome.tabs.update(currentTabId, {url:`miniyp://${youtube_id}/?width=${width}&height=${height}`})
     }
     catch(e){
       alert(`current tab is valid URL \n URL:${currentTab.url}`);
