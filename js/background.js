@@ -17,7 +17,10 @@ chrome.browserAction.onClicked.addListener(function() {
       }
       // send to local MiniYoutube App
       youtube_id = currentTab.url.split('?')[1].split('v=')[1].split('&')[0];
-      chrome.tabs.update(currentTabId, {url:`miniyp://${youtube_id}/?width=${width}&height=${height}`})
+      chrome.tabs.create({}, (tab)=>{
+        chrome.tabs.update(tab.id, {url:`miniyp://${youtube_id}/?width=${width}&height=${height}`})
+        chrome.tabs.remove(currentTabId);
+      })
     }
     catch(e){
       alert(`current tab is valid URL \n URL:${currentTab.url}`);
