@@ -1,7 +1,7 @@
 const youtube_url = 'https://www.youtube.com/watch?'
 const search = 'page';
-const width = 1920;
-const height = 1080;
+const width = 780;
+const height = 438;
 var counter = 1;
 var lastTabId = -1;
 
